@@ -5,20 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ElmoKaDem Photography</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
     color: white;
-    background: url('profile.jpg') no-repeat center center/cover;
+    /* تم تعديل الاسم هنا ليطابق ملفك الجديد */
+    background: url('profile.jpg') no-repeat center center/cover fixed;
 }
 
 .overlay {
     backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     min-height: 100vh;
-    padding-top: 40px;
+    padding: 40px 10px;
+    box-sizing: border-box;
 }
 
 .profile {
@@ -27,23 +31,45 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 h2 {
     margin: 15px 0 25px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .button {
-    display: block;
-    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     text-decoration: none;
     padding: 15px;
     margin: 12px auto;
-    width: 80%;
+    width: 85%;
     max-width: 320px;
     border-radius: 30px;
     font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.button i {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+/* الألوان الاحترافية لكل منصة */
+.fb { background-color: #1877F2; }
+.ig { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+.tk { background-color: #000000; border: 1px solid rgba(255,255,255,0.4); }
+.wa { background-color: #25D366; }
+.call { background-color: #444; }
+
+.button:active {
+    transform: scale(0.95);
 }
 </style>
 </head>
@@ -54,11 +80,25 @@ h2 {
     <img src="profile.jpg" class="profile">
     <h2>ElmoKaDem Photography</h2>
 
-    <a class="button" href="https://www.facebook.com/share/1AsaePx6C3/?mibextid=wwXIfr">Facebook</a>
-    <a class="button" href="https://www.instagram.com/elmokadem_photographer">Instagram</a>
-    <a class="button" href="https://www.tiktok.com/@elmokadem.photographar">TikTok</a>
-    <a class="button" href="https://wa.me/201210425901">WhatsApp</a>
-    <a class="button" href="tel:01092217287">اتصال</a>
+    <a class="button fb" href="https://www.facebook.com/share/1AsaePx6C3/?mibextid=wwXIfr" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+    </a>
+    
+    <a class="button ig" href="https://www.instagram.com/elmokadem_photographer" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+    
+    <a class="button tk" href="https://www.tiktok.com/@elmokadem.photographar" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    
+    <a class="button wa" href="https://wa.me/201210425901" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    
+    <a class="button call" href="tel:01092217287">
+        <i class="fas fa-phone"></i> اتصال
+    </a>
 </div>
 
 </body>
