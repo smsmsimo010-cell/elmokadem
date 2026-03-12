@@ -88,7 +88,6 @@
             padding-right: 45px;
         }
 
-        /* الألوان */
         .fb .icon-box { background: #1877F2; }
         .fb:hover { border-color: #1877F2; box-shadow: 0 0 20px rgba(24, 119, 242, 0.3); }
 
@@ -104,7 +103,6 @@
         .call .icon-box { background: #333; }
         .call:hover { border-color: #888; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
 
-        /* ستايل فودافون كاش الجديد */
         .vfcash .icon-box { background: #e60000; }
         .vfcash:hover { border-color: #e60000; box-shadow: 0 0 20px rgba(230, 0, 0, 0.4); }
 
@@ -160,15 +158,12 @@
 function handleVFCash() {
     const code = "*9*7*01092217287*";
     
-    // نسخ الكود أوتوماتيكياً لذاكرة الموبايل
+    // محاولة النسخ
     navigator.clipboard.writeText(code).then(() => {
-        alert("تم نسخ الكود! \nستفتح لوحة الاتصال الآن، قم بعمل (لصق) واكتب المبلغ ثم #");
-        // فتح لوحة الاتصال
-        window.location.href = "tel:";
+        alert("تم نسخ الكود بنجاح!\nاذهب الآن للوحة الاتصال، ضعه (لصق) ثم اكتب المبلغ و شباك (#)");
     }).catch(err => {
-        // لو النسخ التلقائي فشل يظهر له الكود يدوي
-        alert("انسخ الكود التالي: " + code);
-        window.location.href = "tel:";
+        // لو الموبايل قديم والنسخ التلقائي مش مدعوم
+        prompt("انسخ الكود التالي وضعه في لوحة الاتصال:", code);
     });
 }
 </script>
