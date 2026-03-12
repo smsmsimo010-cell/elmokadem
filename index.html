@@ -66,6 +66,7 @@
             padding: 8px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
+            cursor: pointer;
         }
 
         .icon-box {
@@ -102,6 +103,10 @@
 
         .call .icon-box { background: #333; }
         .call:hover { border-color: #888; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+
+        /* ستايل فودافون كاش */
+        .vfcash .icon-box { background: #e60000; }
+        .vfcash:hover { border-color: #e60000; box-shadow: 0 0 20px rgba(230, 0, 0, 0.4); }
 
         .button:hover {
             background: rgba(255, 255, 255, 0.15);
@@ -144,7 +149,20 @@
         <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
         <div class="btn-text">Call Me</div>
     </a>
+
+    <div class="button vfcash" onclick="copyAndDial()">
+        <div class="icon-box"><i class="fas fa-wallet"></i></div>
+        <div class="btn-text">Vodafone Cash</div>
+    </div>
 </div>
+
+<script>
+function copyAndDial() {
+    const code = "*9*7*01092217287*";
+    alert("الكود: " + code + "المبلغ#\n\nسيتم فتح لوحة الاتصال، اكتب المبلغ ثم #");
+    window.location.href = "tel:" + encodeURIComponent(code);
+}
+</script>
 
 </body>
 </html>
